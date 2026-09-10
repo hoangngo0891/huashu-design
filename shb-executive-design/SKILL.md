@@ -1,14 +1,14 @@
 ---
 name: shb-executive-design
-description: Adaptive SHB executive design skill for management presentations, reports, dashboards, analytical visuals, executive summaries, research notes, financial communications, and other professional deliverables. Preserve SHB visual identity and institutional discipline while adapting layout, information architecture, and visual language to the content, audience, decision objective, and source material. The architect owns reasoning, structure, and message; this skill governs design execution and quality.
+description: Adaptive SHB executive design skill for management presentations, reports, dashboards, analytical visuals, executive summaries, research notes, financial communications, and other professional deliverables. Preserve SHB visual identity and institutional discipline while adapting layout, information architecture, charting, and visual language to the content, audience, decision objective, and source material. The architect owns reasoning, structure, data integrity, and message; this skill governs specialist routing, design execution, and quality.
 ---
 
-# SHB Executive Design · v2
+# SHB Executive Design · v2.1
 
 ## Mission
 Create professional SHB-facing or SHB-internal visual deliverables that are accurate, executive-readable, visually disciplined, and adaptable to the problem at hand.
 
-This is a **general design system**, not a collection of fixed templates.
+This is a **general design system and orchestration layer**, not a collection of fixed templates.
 
 The skill may design or redesign:
 - management presentations and committee decks;
@@ -25,9 +25,9 @@ Existing pattern files are examples and accelerators. They must **never limit th
 
 ## Operating model
 1. **Architect / analyst** — owns business reasoning, data validation, insight, storyline, structure, decision framing, and final judgement.
-2. **SHB Executive Design** — translates the architect's intent into an adaptive visual system appropriate to the deliverable.
-3. **Design execution engine** — Huashu or another available design/rendering tool executes layout, refinement, and export.
-4. **Delivery QA** — validates accuracy, visual hierarchy, institutional consistency, language quality, and editability.
+2. **Data / calculation layer** — prepares, transforms, reconciles, and sanity-checks quantitative data before charting when required.
+3. **Specialist execution layer** — routes bounded tasks to Flint Chart Author for quantitative chart grammar, Huashu for visual composition, or another appropriate tool.
+4. **SHB Executive Design** — integrates all components, applies SHB visual discipline, and governs final QA.
 
 The design layer must not invent business conclusions, unsupported causality, numbers, sources, or management recommendations.
 
@@ -37,7 +37,7 @@ When rules conflict, use this order:
 2. Architect-approved message and decision objective
 3. Source-document constraints and established SHB visual identity
 4. Executive readability and information hierarchy
-5. Fit-for-purpose visual design
+5. Fit-for-purpose analytical and visual design
 6. Reusability and editability
 7. Aesthetics and novelty
 
@@ -55,6 +55,7 @@ Before designing, determine:
 5. **Evidence** — numbers, trends, drivers, comparisons, or qualitative facts that support the message.
 6. **Source visual system** — existing SHB deck/report, supplied template, or no existing system.
 7. **Best visual form** — chosen from the content, not from a fixed template catalogue.
+8. **Best specialist** — route quantitative charting, data preparation, and visual composition according to `core/tool-routing.md`.
 
 If a suitable pattern exists, reuse and adapt it. If none fits, create a new structure using the core design rules.
 
@@ -76,6 +77,32 @@ Always use the core files as guardrails:
 - `core/charts-tables.md`
 - `core/executive-storytelling.md`
 - `core/quality-review.md`
+- `core/tool-routing.md`
+
+## Specialist routing
+
+### Data / calculation tools
+Use spreadsheet, Python, SQL, or another suitable data tool first when the request requires aggregation, joins, filters, pivots, reconciliations, derived metrics, or comparison calculations such as YoY, MoM, QoQ, YTD, spreads, gaps, or vs-plan.
+
+### Flint Chart Author
+Prefer Flint when:
+- the task is quantitative charting;
+- the analytical question is clear;
+- the data are already prepared and validated;
+- Flint supports the intended chart cleanly.
+
+Flint is a specialist for chart semantics and chart grammar. It does **not** own business insight, data transformation, or final SHB presentation design.
+
+### Huashu Design
+Prefer Huashu when:
+- the task requires page/slide composition;
+- a dashboard, information graphic, flow map, framework, or high-fidelity visual needs layout refinement;
+- multiple components need to be combined into one executive visual.
+
+Huashu does **not** own validated data or business conclusions.
+
+### Final integration
+For SHB deliverables, specialist outputs must be adapted into the SHB visual system and reviewed through `core/quality-review.md` before delivery.
 
 ## Pattern library
 Patterns are optional accelerators, not mandatory routes:
@@ -102,6 +129,8 @@ For analytical and financial work:
 - never use decorative trend symbols as substitutes for actual comparison information;
 - never fabricate unavailable values or implied causal relationships.
 
+If charting is required, follow `core/tool-routing.md`: **reason first → prepare data → Flint when suitable → compose → SHB final governance**.
+
 ## Language
 Executive copy should sound like an internal professional report, not generic AI prose.
 
@@ -118,6 +147,15 @@ Avoid:
 - over-explaining obvious chart content;
 - generic consultant-style wording that could apply to any bank.
 
+## Flint handoff contract
+When Flint is used:
+- the architect defines the analytical question and intended message;
+- the data layer provides validated prepared data or exact field names;
+- units and comparison basis are explicit;
+- Flint selects/implements chart grammar through its semantic specification;
+- Flint must not invent missing calculations, fields, labels, or business conclusions;
+- the resulting chart is adapted to the SHB visual system before final delivery.
+
 ## Huashu handoff contract
 When Huashu is used as the downstream execution engine:
 - the architect brief is authoritative;
@@ -132,13 +170,14 @@ When Huashu is used as the downstream execution engine:
 1. Architect validates content and defines the decision objective.
 2. Determine deliverable, audience, and primary message.
 3. Inspect source material and existing SHB visual system if available.
-4. Read the core references.
-5. Check whether a pattern is useful; adapt if yes, create freely if no.
-6. Build the information architecture and visual specification.
-7. Execute using Huashu or another appropriate rendering tool.
-8. Review against `core/quality-review.md`.
-9. Revise failed dimensions only.
-10. Deliver in the requested format.
+4. Read the core references, including `core/tool-routing.md`.
+5. If quantitative charting is needed, prepare/transform data first and route to Flint when suitable.
+6. Check whether a pattern is useful; adapt if yes, create freely if no.
+7. Build the information architecture and visual specification.
+8. Execute composition using Huashu or another appropriate rendering tool when needed.
+9. Review against `core/quality-review.md`.
+10. Revise failed dimensions only.
+11. Deliver in the requested format.
 
 ## Scope boundary
 Use this skill for professional SHB communication and analytical design. For consumer marketing campaigns, entertainment visuals, cinematic launch films, or unrelated product UI work, use a more appropriate general design skill unless the user specifically asks to apply SHB Executive Design.
